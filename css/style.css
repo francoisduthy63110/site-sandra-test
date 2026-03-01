@@ -1,0 +1,688 @@
+/* =========================================
+   VARIABLES (La Charte Graphique de Sandra)
+   ========================================= */
+:root {
+    --primary-color: #2D2D2D; 
+    --accent-color: #EF5B44;  
+    --background-color: #FAFAFA; 
+    --text-color: #4A4A4A; 
+    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* =========================================
+   PAGE CONTACT
+   ========================================= */
+.contact-container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 5rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.info-item {
+    margin-bottom: 2.5rem;
+}
+
+.info-item h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.info-item p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.contact-map {
+    flex: 1.5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 450px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-map {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+/* =========================================
+   PAGE LA SÉANCE
+   ========================================= */
+.intro-lead {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem !important;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.seance-content h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.practical-info {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.practical-info h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--accent-color);
+}
+
+.info-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-top: 1.5rem;
+    line-height: 1.4;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1rem;
+}
+
+/* =========================================
+   RÉINITIALISATION DE BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.8; 
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   EN-TÊTE ET NAVIGATION
+   ========================================= */
+.site-header {
+    background-color: #ffffff;
+    padding: 1.5rem 5%;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    max-width: 350px; 
+    height: auto;
+    display: block;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   HARMONISATION DES TITRES (H2, H3)
+   ========================================= */
+.hero-title, .page-header h2, .page-header h3 {
+    font-size: 2.4rem; 
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title-separator {
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 1.5rem auto 0 auto;
+}
+
+/* =========================================
+   SECTION PRINCIPALE ACCUEIL (HERO)
+   ========================================= */
+.hero-section {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Centre parfaitement au milieu (verticalement) */
+    gap: 4rem;
+}
+
+.hero-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.hero-text {
+    flex: 1.5; /* On donne un peu plus de largeur au texte pour réduire sa hauteur */
+}
+
+.hero-title {
+    margin-bottom: 2rem;
+}
+
+.content-text p {
+    margin-bottom: 1.5rem;
+    text-align: justify; 
+}
+
+.signature {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 0; /* Évite un décalage invisible en bas */
+    color: var(--accent-color);
+}
+
+.hero-image {
+    flex: 1; /* On rééquilibre la colonne de l'image */
+    display: flex;
+    justify-content: center; /* Centre la photo horizontalement dans sa colonne */
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 300px; /* On force la photo à être un peu plus grande pour occuper l'espace */
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+}
+
+/* Le bouton Doctolib */
+.btn-doctolib {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    background-color: #ffffff;
+    color: #0596DE;
+    border: 2px solid #0596DE;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(5, 150, 222, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-doctolib:hover {
+    background-color: #F0F8FF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 150, 222, 0.2);
+}
+
+.doctolib-icon {
+    width: 85px;
+    height: auto;
+    display: block;
+    margin: 0;
+}
+
+/* =========================================
+   SÉPARATEURS & SERVICES
+   ========================================= */
+.separator {
+    text-align: center;
+    margin: 4rem 0;
+}
+.separator img {
+    width: 60px;
+    opacity: 0.8;
+}
+
+.services-section {
+    max-width: 1100px;
+    margin: 0 auto 5rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.service-icon {
+    height: 60px; 
+    margin-bottom: 1.5rem;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* =========================================
+   PAGES INTERNES (PRÉSENTATION & STICKY)
+   ========================================= */
+.page-content {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.presentation-section {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start; /* Essentiel pour que le "Sticky" fonctionne */
+    margin-bottom: 5rem;
+}
+
+.text-column {
+    flex: 1.5;
+    text-align: justify;
+}
+
+.text-column p {
+    margin-bottom: 1.5rem;
+}
+
+.text-column strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* L'EFFET STICKY POUR COMBLER LE VIDE */
+.image-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* La magie opère ici : */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px; /* L'image s'arrêtera à 150px du haut de l'écran en défilant */
+}
+
+.profile-pic, .ambiance-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+/* =========================================
+   FORMATIONS ET AUTRES BLOCS
+   ========================================= */
+.education-section {
+    margin-bottom: 5rem;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.education-section h3 {
+    margin-bottom: 3rem;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.edu-card {
+    border-top: 3px solid var(--accent-color);
+    padding-top: 1.5rem;
+}
+
+.edu-card h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.edu-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.image-break {
+    width: 100%;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.image-break img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.approach-content {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+/* =========================================
+   PIED DE PAGE (FOOTER)
+   ========================================= */
+.site-footer {
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.linkedin-icon {
+    width: 35px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    opacity: 1;
+}
+
+.site-footer p {
+    margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+    color: var(--accent-color);
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE (SMARTPHONES ET TABLETTES)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        margin: 3rem auto;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-actions {
+        order: 2;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image {
+        order: 3;
+    }
+
+    .hero-title {
+        text-align: center; 
+    }
+
+    .content-text p {
+        text-align: center; 
+    }
+
+    .hero-image img {
+        max-width: 250px; /* On la réduit un peu sur mobile pour ne pas écraser l'écran */
+        margin: 0 auto;
+    }
+
+    .btn-doctolib {
+        margin: 2rem auto; /* Parfaitement au centre sous le texte */
+    }
+
+    .presentation-section {
+        flex-direction: column; /* Le texte passe sous l'image */
+        gap: 3rem;
+    }
+
+    .image-column {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        position: static; /* On désactive l'effet collant sur téléphone, ça n'a pas de sens */
+    }
+
+    .site-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .site-footer p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 850px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo img {
+        margin: 0 auto 1.5rem auto;
+        max-width: 280px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .education-section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* =========================================
+   PAGE INTERVENTIONS
+   ========================================= */
+.intervention-block { display: flex; gap: 4rem; align-items: flex-start; margin-bottom: 4rem; }
+.reverse-layout { flex-direction: row-reverse; }
+.intervention-title { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.title-icon { width: 50px; height: auto; }
+.intervention-title h3 { font-size: 2rem; font-weight: 300; color: var(--primary-color); margin: 0; }
+.subtitle { font-size: 1.2rem; font-style: italic; color: var(--accent-color); margin-top: -1rem; margin-bottom: 1.5rem; }
+
+.domaines-intervention { background: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-top: 2rem; border-left: 4px solid var(--accent-color); }
+.domaines-intervention h4 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; }
+
+.clean-list { list-style: none; padding-left: 0; }
+.clean-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+.clean-list li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; top: 0; }
+.columns-2 { column-count: 2; column-gap: 2rem; }
+
+.warning-text { background-color: #FFF4F2; padding: 1rem; border-radius: 6px; color: #D3452D; font-size: 0.95rem; }
+
+/* FAQ Styles */
+.faq-container { margin-top: 3rem; }
+.faq-list dt { font-weight: bold; color: var(--primary-color); font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+.faq-list dd { margin-left: 0; margin-bottom: 1.5rem; color: var(--text-color); }
+.faq-list ol { margin-left: 1.5rem; margin-top: 0.5rem; }
+
+@media (max-width: 900px) {
+    .intervention-block, .reverse-layout { flex-direction: column; }
+    .columns-2 { column-count: 1; }
+}
+
+/* =========================================
+   PAGE QUESTIONS (FAQ ACCORDÉON)
+   ========================================= */
+.faq-accordion {
+    max-width: 850px; /* Largeur optimale pour la lecture */
+    margin: 0 auto 6rem auto;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent-color);
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+    cursor: pointer;
+    list-style: none; /* Supprime le triangle par défaut */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Cache le triangle par défaut sur Safari */
+.faq-question::-webkit-details-marker {
+    display: none; 
+}
+
+/* Crée notre propre icône Corail "+" et "-" */
+.faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+/* Quand on clique (ouvert) */
+.faq-item[open] .faq-question::after {
+    content: "−";
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-item[open] .faq-question {
+    color: var(--accent-color);
+    border-bottom: 1px dashed #eaeaea;
+    margin-bottom: 1rem;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
