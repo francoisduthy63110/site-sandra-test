@@ -548,8 +548,17 @@ a {
         text-align: center; 
     }
 
+    .content-text,
     .content-text p {
-        text-align: center; 
+        text-align: left;
+    }
+
+    .text-column,
+    .text-column p,
+    .faq-answer,
+    .faq-answer p,
+    .faq-list dd {
+        text-align: left;
     }
 
     .hero-image img {
