@@ -242,6 +242,10 @@ a {
     text-align: justify; 
 }
 
+.content-text p.compact-text {
+    margin-bottom: 0;
+}
+
 .signature {
     font-style: italic;
     font-size: 1.1rem;
@@ -311,7 +315,7 @@ a {
     margin: 0 auto 5rem auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 3rem;
 }
 
@@ -319,17 +323,27 @@ a {
     background: #ffffff;
     padding: 2.5rem 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--accent-color);
     text-align: center;
+}
+
+.service-card a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.07);
 }
 
 .service-icon {
-    height: 60px; 
+    height: 82px;
+    width: auto;
+    display: block;
     margin-bottom: 1.5rem;
 }
 
@@ -343,6 +357,19 @@ a {
 .service-card p {
     font-size: 0.95rem;
     color: var(--text-color);
+    line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+    .services-section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .services-section {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* =========================================
@@ -403,8 +430,9 @@ a {
     text-align: center;
     background-color: #ffffff;
     padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    border-top: 3px solid var(--accent-color);
 }
 
 .education-section h3 {
@@ -443,6 +471,7 @@ a {
     width: 100%;
     max-height: 500px;
     object-fit: cover;
+    object-position: center 65%;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
@@ -587,14 +616,92 @@ a {
 .title-icon { width: 50px; height: auto; }
 .intervention-title h3 { font-size: 2rem; font-weight: 300; color: var(--primary-color); margin: 0; }
 .subtitle { font-size: 1.2rem; font-style: italic; color: var(--accent-color); margin-top: -1rem; margin-bottom: 1.5rem; }
+.section-subtitle { margin-top: 2rem; }
+.spaced-paragraph { margin-top: 2rem; }
 
-.domaines-intervention { background: #ffffff; padding: 2rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-top: 2rem; border-left: 4px solid var(--accent-color); }
-.domaines-intervention h4 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.2rem; }
+.domaines-intervention {
+    background: #fffdfc;
+    padding: 2.2rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.035);
+    margin-top: 2rem;
+    border-top: 2px solid var(--accent-color);
+}
+
+.domaines-intervention h4 {
+    color: var(--primary-color);
+    margin-bottom: 1.75rem;
+    font-size: 1.2rem;
+}
+
+.domain-group-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.9rem;
+}
+
+.domain-outline {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.domain-outline-item {
+    position: relative;
+    padding-left: 1.35rem;
+    margin-bottom: 1.8rem;
+}
+
+.domain-outline-item:last-child {
+    margin-bottom: 0;
+}
+
+.domain-outline-item::before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0.05rem;
+}
+
+.domain-sublist {
+    list-style: none;
+    margin: 0.15rem 0 0 1.1rem;
+    padding-left: 0;
+}
+
+.domain-sublist li {
+    position: relative;
+    margin-bottom: 0.8rem;
+    padding-left: 1.25rem;
+    line-height: 1.8;
+}
+
+.domain-sublist li:last-child {
+    margin-bottom: 0;
+}
+
+.domain-sublist li::before {
+    content: "";
+    width: 7px;
+    height: 1px;
+    background-color: rgba(239, 91, 68, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0.95rem;
+}
 
 .clean-list { list-style: none; padding-left: 0; }
 .clean-list li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
 .clean-list li::before { content: "•"; color: var(--accent-color); font-weight: bold; position: absolute; left: 0; top: 0; }
 .columns-2 { column-count: 2; column-gap: 2rem; }
+.left-aligned-list,
+.left-aligned-list li {
+    text-align: left;
+    text-justify: auto;
+}
 
 .warning-text { background-color: #FFF4F2; padding: 1rem; border-radius: 6px; color: #D3452D; font-size: 0.95rem; }
 
