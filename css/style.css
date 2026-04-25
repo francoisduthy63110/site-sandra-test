@@ -497,38 +497,41 @@ h1, h2, h3, h4, h5, h6,
    PIED DE PAGE (FOOTER)
    ========================================= */
 .site-footer {
-    background-color: var(--primary-color);
-    color: rgba(255,255,255,0.7);
+    background-color: #ffffff;
+    color: var(--accent-color);
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 1.35rem 2rem;
     font-size: 0.9rem;
     font-weight: 300;
-}
-
-.social-links {
-    margin-bottom: 1.5rem;
-}
-
-.linkedin-icon {
-    width: 35px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.linkedin-icon:hover {
-    opacity: 1;
+    border-top: 1px solid #e6e6e6;
 }
 
 .site-footer p {
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-.site-footer a {
+.footer-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    white-space: nowrap;
+}
+
+.footer-separator {
     color: var(--accent-color);
 }
 
+.site-footer a {
+    color: inherit;
+}
+
 .site-footer a:hover {
-    color: #ffffff;
+    opacity: 0.8;
 }
 
 /* =========================================
@@ -594,15 +597,8 @@ h1, h2, h3, h4, h5, h6,
         position: static; /* On désactive l'effet collant sur téléphone, ça n'a pas de sens */
     }
 
-    .site-footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .site-footer p {
-        margin: 0;
+    .footer-line {
+        gap: 0.35rem;
     }
 }
 
